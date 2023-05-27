@@ -36,7 +36,7 @@ export default {
   border: 1px solid limegreen;
 }
 
-.register button ,.login input {
+.register button , .login button {
   width: 320px;
   height: 40px;
   border: 1px solid skyblue;
