@@ -1,31 +1,35 @@
 <template>
-    <Header/>
-    <h1>Hello {{ name }}, welcome to the home page</h1>
-    <table class="table">
-        <tr>
-            <td>ID</td>
-            <td>Name</td>
-            <td>Address</td>
-            <td>City</td>
-            <td>State</td>
-            <td>Action</td>
-            
-
-        </tr>
-        <tr v-for="item in restuarant" :key="item.id" >
-            <td>{{ item.id }}</td>
-            <td>{{ item.name }}</td>
-            <td>{{ item.address }}</td>
-            <td>{{ item.city }}</td>
-            <td>{{ item.state }}</td>
-            <td>
-                <router-link :to="'/update/'+item.id">Update</router-link>
-                <button v-on:click="deleteRestuarant(item.id)"> Delete</button>
+    <div>
+      <Header />
+      <h1 class="text-4xl font-bold text-black py-8">Hello {{ name }}, welcome to the home page</h1>
+      <div class="container mx-auto">
+        <table class="table center bg-white">
+          <tr class="bg-yellow-200">
+            <th class="py-4">ID</th>
+            <th class="py-4">Name</th>
+            <th class="py-4">Address</th>
+            <th class="py-4">City</th>
+            <th class="py-4">State</th>
+            <th class="py-4">Action</th>
+          </tr>
+          <tr v-for="item in restuarant" :key="item.id">
+            <td class="py-5">{{ item.id }}</td>
+            <td class="py-5">{{ item.name }}</td>
+            <td class="py-5">{{ item.address }}</td>
+            <td class="py-5">{{ item.city }}</td>
+            <td class="py-5">{{ item.state }}</td>
+            <td class="py-2">
+              <router-link :to="'/update/' + item.id" class="text-blue-500 px-4 py-2 rounded bg-blue-200 mr-2">Update</router-link>
+              <button v-on:click="deleteRestuarant(item.id)" class="text-red-500 px-4 py-2 rounded bg-red-200">Delete</button>
             </td>
-            
-        </tr>
-    </table>  
- </template> 
+          </tr>
+        </table>
+      </div>
+    </div>
+  </template>
+  
+  
+
  <script>
  import Header from './Header.vue';
  import axios from 'axios';
@@ -67,30 +71,3 @@
  }
  </script>
 
- <style>
-td{
-    border: 1px solid black;
-    padding: 10px;
-    text-align: center;
-    border-radius: 5px;
-    margin: 10px;
-    width: 100px;
-
-}
-tr{
-    border: 1px solid black;
-    padding: 10px;
-    text-align: center;
-    border-radius: 5px;
-    margin: 10px;
-    font-weight: bold;
-
-}
-.table{
-    border: 1px solid rgb(40, 206, 139);
-    padding: 10px;
-    text-align: center;
-    border-radius: 5px;
-    margin: 10px;
-}
-</style>

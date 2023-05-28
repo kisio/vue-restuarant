@@ -1,18 +1,21 @@
-<template>
-    <img class="logo" src="../assets/logo1.jpeg" alt="" />
-    <h1>Sign Up</h1>
-    <div class="register">
-        <input type="text" v-model="name" placeholder="Enter Name" />
-        <input type="text" v-model="email" placeholder="Enter email" />
-        <input type="password" v-model="password" placeholder="Enter password" />
-        <p></p>
-        <button v-on:click="signUp()">Signup</button>
-        <p>
-            <router-link to="/login">Login</router-link>
-        </p>
-    </div>
-</template>
 
+<template>
+    <div class="flex flex-col items-center justify-center h-screen bg-gray-100">
+      <img class="w-32 h-32 mb-8 rounded-full" src="../assets/logo1.jpeg" alt="Logo" />
+      <h1 class="text-3xl font-bold mb-4">Sign Up</h1>
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <input type="text" v-model="name" placeholder="Enter Name" class="border border-gray-300 rounded-md px-4 py-2 mb-4 focus:outline-none focus:border-blue-500 w-64" />
+        <input type="text" v-model="email" placeholder="Enter email" class="border border-gray-300 rounded-md px-4 py-2 mb-4 focus:outline-none focus:border-blue-500 w-64" />
+        <input type="password" v-model="password" placeholder="Enter password" class="border border-gray-300 rounded-md px-4 py-2 mb-4 focus:outline-none focus:border-blue-500 w-64" />
+        <button v-on:click="signUp" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded w-64">Sign Up</button>
+        <p class="mt-4">
+          <router-link to="/login" class="text-blue-500 hover:underline">Login</router-link>
+        </p>
+      </div>
+    </div>
+  </template>
+  
+  
 <script>
 import axios from "axios";
 export default {

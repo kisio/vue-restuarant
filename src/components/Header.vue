@@ -1,12 +1,12 @@
+
 <template>
-    <div class="nav">
-        <router-link to="/">Home</router-link> 
-        <router-link to="/Add">Add</router-link> 
-        <a href="" @click="logout">logout</a>
-
+    <div class="nav bg-blue-500 text-white py-4">
+      <router-link class="mr-4" to="/">Home</router-link>
+      <router-link class="mr-4" to="/Add">Add</router-link>
+      <a class="mr-4" href="#" @click="logout">Logout</a>
     </div>
-</template>
-
+  </template>
+  
 <script>
 export default{
     name:'HeaderS',
