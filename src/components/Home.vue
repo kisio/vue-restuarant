@@ -8,6 +8,8 @@
             <td>Address</td>
             <td>City</td>
             <td>State</td>
+            <td>Action</td>
+            
 
         </tr>
         <tr v-for="item in restuarant" :key="item.id" >
@@ -16,6 +18,8 @@
             <td>{{ item.address }}</td>
             <td>{{ item.city }}</td>
             <td>{{ item.state }}</td>
+            <td><router-link :to="'/update/'+item.id">Update</router-link></td>
+            
         </tr>
     </table>
  </template> 

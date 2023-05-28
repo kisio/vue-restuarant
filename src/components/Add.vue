@@ -11,6 +11,7 @@
  </template>
  <script>
  import Header from './Header.vue'
+ import axios from "axios";
  export default {
      name: 'AddPage',
      components:{
@@ -27,8 +28,19 @@
         }
      },
      methods:{
-        addRestuarant(){
+        async addRestuarant(){
             console.warn(this.restuarant)
+            const result=await axios.post("http://localhost:3000/restuarant",{
+                name:this.restuarant.name,
+                address:this.restuarant.address,
+                city:this.restuarant.city,
+                state:this.restuarant.state,
+            });
+            if(result.status==201)
+            {
+                this.$router.push('/');
+            }
+            console.warn("result",result)
         }
      },
      mounted() {

@@ -25,12 +25,12 @@ const routes = [
   {
     name: "AddPage",
     component: Add,
-    path: "/Add",
+    path: "/add",
   },
   {
     name: "UpdatePage",
     component: Update,
-    path: "/Update",
+    path: "/update/:id",
   }
 ];
 
