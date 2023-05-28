@@ -1,8 +1,8 @@
 <template>
     <div class="nav">
-        <a href="#">Home</a>
-        <a href="">Add Restuarant</a>
-        <a href="">Update Resturant</a>
+        <router-link to="/">Home</router-link> 
+        <router-link to="/Add">Add</router-link> 
+        <router-link to="/Update">Update</router-link> 
         <a href="" @click="logout">logout</a>
 
     </div>
