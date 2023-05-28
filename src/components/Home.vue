@@ -54,6 +54,7 @@ td{
     text-align: center;
     border-radius: 5px;
     margin: 10px;
+    width: 100px;
 
 }
 tr{
@@ -62,6 +63,8 @@ tr{
     text-align: center;
     border-radius: 5px;
     margin: 10px;
+    font-weight: bold;
+
 }
 .table{
     border: 1px solid rgb(40, 206, 139);
