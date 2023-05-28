@@ -18,10 +18,13 @@
             <td>{{ item.address }}</td>
             <td>{{ item.city }}</td>
             <td>{{ item.state }}</td>
-            <td><router-link :to="'/update/'+item.id">Update</router-link></td>
+            <td>
+                <router-link :to="'/update/'+item.id">Update</router-link>
+                <button v-on:click="deleteRestuarant(item.id)"> Delete</button>
+            </td>
             
         </tr>
-    </table>
+    </table>  
  </template> 
  <script>
  import Header from './Header.vue';
@@ -37,8 +40,17 @@
      components:{
         Header
      },
-    async mounted() {
-        let user = localStorage.getItem('user-info');
+     methods:{
+       async deleteRestuarant(id)
+        {
+            let result=await axios.delete('http://localhost:3000/restuarant/'+id);
+            console.warn(result)
+            if(result.status==200){
+                this.loadData()
+            }
+        },
+        async loadData(){
+            let user = localStorage.getItem('user-info');
         this.name=JSON.parse(user).name;
         if (!user) {
             this.$router.push({ name: 'SignUp' })
@@ -46,7 +58,11 @@
         let result=await axios.get('http://localhost:3000/restuarant');
         console.warn(result)
         this.restuarant=result.data;
-
+        }
+     },
+    async mounted() {
+        
+        this.loadData()
     }
  }
  </script>
